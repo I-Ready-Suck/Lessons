@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2 - I-Suck</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: blue; /* Blue background for the website */
+            color: white; /* Text color for contrast */
+            text-align: center;
+        }
+
+        .head-bar {
+            background-color: white; /* White head bar */
+            height: 30px; /* Small height */
+            width: 100%; /* Full width of the page */
+            position: fixed; /* Stays at the top of the page */
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Ensures it stays above other content */
+        }
+
+        main {
+            margin-top: 30px; /* Prevents content from overlapping the head bar */
+            padding: 20px;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+
+        .action-button {
+            background-color: #28a745; /* Green color */
+            color: white;
+            border: 2px solid #1e7a34; /* Slightly darker green for border */
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: "Verdana", sans-serif;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Old-style shadow */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Slight text shadow */
+        }
+
+        .action-button:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        .action-button:active {
+            background-color: #1e7a34; /* Even darker green when clicked */
+        }
+    </style>
+</head>
+<body>
+    <header class="head-bar"></header>
+    <main id="content">
+        <h1>I-Suck Lesson 2</h1>
+        <p>Learn to tell time. Do that by looking at your clock.</p>
+    </main>
+    <footer>
+        <button id="next-button" class="action-button">Next</button>
+    </footer>
+
+    <script>
+        const content = document.getElementById("content");
+        const button = document.getElementById("next-button");
+
+        button.addEventListener("click", () => {
+            if (button.innerText === "Next") {
+                // Update content
+                content.innerHTML = "<h1>Also read the hitchhiker's guide to the galaxy. The whole series.</h1>";
+                // Change button text to 'Done'
+                button.innerText = "Done";
+            } else if (button.innerText === "Done") {
+                // Clear the page
+                document.body.innerHTML = "";
+            }
+        });
+    </script>
+</body>
+</html>
